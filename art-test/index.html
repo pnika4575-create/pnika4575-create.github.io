@@ -485,9 +485,9 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   transition:color .5s var(--e3)}
 .fold summary::-webkit-details-marker{display:none}
 .fold summary:hover{color:var(--accent)}
-.fold summary .t{display:block}
-.fold summary .lbl{display:block; margin-bottom:12px}
-.fold summary .d2{display:block; font-family:var(--fd); font-weight:300;
+.fold .t{display:block}
+.fold .lbl{display:block; margin-bottom:12px}
+.fold .d2{display:block; font-family:var(--fd); font-weight:300;
   font-size:clamp(23px,2.8vw,38px); line-height:1.04; letter-spacing:-.03em}
 .fold .pl{flex:none; width:18px; height:18px; position:relative}
 .fold .pl::before,.fold .pl::after{content:''; position:absolute; inset:50% 0 auto;
@@ -495,6 +495,12 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 .fold .pl::after{transform:rotate(90deg)}
 .fold[open] .pl::after{transform:rotate(0)}
 .fold .body{padding:4px 0 clamp(28px,3.4vw,44px)}
+a.fold{display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:clamp(20px,2.4vw,30px) 0; color:inherit; transition:color .5s var(--e3)}
+a.fold:hover{color:var(--accent)}
+a.fold .ar{flex:none; width:18px; height:18px; fill:none; stroke:currentColor; stroke-width:1.5;
+  transition:transform .5s var(--e3)}
+a.fold:hover .ar{transform:translateY(4px)}
 .fold .body .grid{row-gap:clamp(18px,2.4vw,30px)}
 .fold .body .hd{grid-column:1/span 5}
 .fold .body .cols{grid-column:7/span 6; display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,32px)}
@@ -513,12 +519,13 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   font-family:var(--fd); font-weight:300; font-size:12px; letter-spacing:.06em; color:var(--accent)}
 
 /* второй рисунок: сейчас и хочу */
-.cmp{background:var(--sand); padding:clamp(52px,6.4vw,96px) 0}
+.cmp{background:var(--sand); padding:clamp(52px,6.4vw,96px) 0; scroll-margin-top:84px}
 .cmp .hd{grid-column:1/span 7; margin-bottom:clamp(30px,3.6vw,52px)}
 .cmp .hd .step-n{font-family:var(--fd); font-weight:200; font-size:13px; letter-spacing:.08em; color:var(--accent)}
 .cmp .hd .d2{margin:16px 0 0; font-size:clamp(26px,3.4vw,46px)}
 .cmp .hd .lead{margin-top:20px; max-width:52ch}
 .cmp .list{grid-column:1/span 12; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,28px)}
+.cmp .back{grid-column:1/span 12; margin-top:clamp(28px,3.4vw,44px)}
 
 @media (max-width:1080px){
   .fold .body .hd{grid-column:1/span 12}
@@ -752,10 +759,15 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
       </div>
     </details>
 
+    <a class="fold jump" href="#sravnenie">
+      <span class="t"><span class="lbl">Шаг третий</span><span class="d2">Сейчас и хочу</span></span>
+      <svg class="ar" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M6 13l6 6 6-6"/></svg>
+    </a>
+
   </div>
 </section>
 
-<div class="glossary">
+<div class="glossary" id="poisk" style="scroll-margin-top:84px">
 <section class="find" aria-label="Поиск по значениям">
   <div class="wrap">
     <div class="srch">
@@ -775,7 +787,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 </section>
 </div>
 
-<section class="cmp">
+<section class="cmp" id="sravnenie">
   <div class="wrap grid">
     <div class="hd">
       <p class="step-n">ШАГ ТРЕТИЙ</p>
@@ -783,6 +795,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
       <p class="lead">Теперь посмотрите на правую половину рисунка и сравните её с левой. Разница между тем, что есть, и тем, чего хочется, и есть ваш запрос на перемены. Ниже разобраны самые частые варианты этой разницы.</p>
     </div>
     <div class="list" id="cmplist"></div>
+    <p class="back"><a href="#poisk" class="tl">Вернуться к поиску по рисунку<svg class="ic" style="transform:rotate(-90deg)"><use href="#i-arrow"/></svg></a></p>
   </div>
 </section>
 
