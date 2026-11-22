@@ -1,11 +1,12 @@
 <!doctype html>
-<html lang="ru">
+<html lang="ru" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Психолог/сексолог Вероника Прачук</title>
 <meta name="description" content="Вероника Прачук, психолог и сексолог в Белграде. Отношения, самооценка, сексуальность. Онлайн и очные консультации.">
 <meta name="theme-color" content="#F4F0E9">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 <link rel="canonical" href="https://pro-otnosheniya.com/">
@@ -269,6 +270,7 @@ body.open .sheet{opacity:1; visibility:visible}
 /* ======================= 7. КАК ПРОХОДИТ ======================= */
 .steps .hd{grid-column:1/span 12; margin-bottom:clamp(36px,4vw,60px)}
 .step{grid-column:span 3; border-top:1px solid var(--line); padding-top:24px}
+.steps .step{grid-column:span 4}
 .step .n{font-family:var(--fd); font-weight:200; font-size:13px; letter-spacing:.08em; color:var(--accent); display:block; margin-bottom:16px}
 .step b{display:block; font-family:var(--fd); font-weight:300; font-size:19px; letter-spacing:-.02em; margin-bottom:10px}
 .step p{margin:0; font-size:15px; line-height:1.6; color:var(--muted)}
@@ -496,7 +498,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   .about .t{grid-column:1/span 10; margin-top:44px}
   .quiz .hd,.price .hd,.book .hd{grid-column:1/span 9}
   .card,.plans,.form,.price .fine{grid-column:1/span 12; margin-top:40px}
-  .step{grid-column:span 6}
+  .steps .step{grid-column:span 6}
   .posts .hd{grid-column:1/span 9}
   .posts .all{grid-column:1/span 12; justify-self:start; margin-top:26px}
   .posts .list{grid-template-columns:repeat(2,1fr)}
@@ -514,7 +516,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   .topic{gap:0}
   .about .ph{grid-column:1/span 12}
   .about .t{grid-column:1/span 12}
-  .step{grid-column:1/span 12}
+  .steps .step{grid-column:1/span 12}
   .posts .list{grid-template-columns:1fr}
   .facts li{grid-template-columns:1fr; gap:6px}
   .band .q p{grid-column:1/span 12}
@@ -731,15 +733,15 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
     <div class="hd rv">
       <h2 class="d2">Как проходят консультации?</h2>
     </div>
-    <div class="step rv" style="grid-column:span 4">
+    <div class="step rv">
       <span class="n">01</span><b>Заявка</b>
       <p>Вы можете оставить заявку на сайте или связаться в WhatsApp, Telegram с кратким описанием Вашей проблемы и с информацией о желаемом формате консультации. Мы подберем удобное время.</p>
     </div>
-    <div class="step rv" style="grid-column:span 4; --d:.08s">
+    <div class="step rv" style="--d:.08s">
       <span class="n">02</span><b>Консультация</b>
       <p>Специальной подготовки на консультацию не требуется. Просто подумайте, какой вопрос вы бы хотели решить, очень часто формирование запроса занимает основную часть первой консультации. Если вы не можете определиться, ничего страшного, я помогу.</p>
     </div>
-    <div class="step rv" style="grid-column:span 4; --d:.16s">
+    <div class="step rv" style="--d:.16s">
       <span class="n">03</span><b>Поддержка</b>
       <p>Каждый случай индивидуален, сколько примерно понадобится сессий на решение вопроса, я смогу сказать после первой консультации. Иногда хватает одной сессии, чаще требуется несколько сеансов с выполнением домашних заданий. Моя задача решить Вашу проблему за минимальное количество сеансов.</p>
     </div>
