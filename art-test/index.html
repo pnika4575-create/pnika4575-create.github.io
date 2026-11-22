@@ -476,19 +476,41 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 
 
 /* ======================= арт-тест «Сад желаний» ======================= */
-/* что рисовать */
-.draw{background:var(--paper); border-block:1px solid var(--line); padding:clamp(44px,5.4vw,78px) 0}
-.draw .hd{grid-column:1/span 5}
-.draw .hd .d2{margin:20px 0 0; font-size:clamp(26px,3.2vw,44px)}
-.draw .hd .lead{margin-top:20px}
-.draw .cols{grid-column:7/span 6; display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,32px)}
-.draw .half{border-top:1px solid var(--line-2); padding-top:20px}
-.draw .half b{display:block; font-family:var(--fd); font-weight:300; font-size:19px; letter-spacing:-.02em; margin-bottom:6px}
-.draw .half .sub{margin:0 0 16px; font-size:13.5px; color:var(--muted)}
-.draw .half ul{list-style:none; margin:0; padding:0}
-.draw .half li{position:relative; padding:0 0 10px 22px; font-size:15.5px; color:var(--ink-2)}
-.draw .half li::before{content:''; position:absolute; left:0; top:11px; width:10px; height:1px; background:var(--accent)}
-.draw .foot{grid-column:7/span 6; margin-top:clamp(22px,2.6vw,34px); padding-top:20px; border-top:1px solid var(--line)}
+/* раскрывающиеся блоки с правилами */
+.folds{padding:clamp(14px,2vw,34px) 0 clamp(18px,2.6vw,44px)}
+.fold{border-top:1px solid var(--line)}
+.fold:last-of-type{border-bottom:1px solid var(--line)}
+.fold summary{display:flex; align-items:center; justify-content:space-between; gap:24px;
+  padding:clamp(20px,2.4vw,30px) 0; cursor:pointer; list-style:none;
+  transition:color .5s var(--e3)}
+.fold summary::-webkit-details-marker{display:none}
+.fold summary:hover{color:var(--accent)}
+.fold summary .t{display:block}
+.fold summary .lbl{display:block; margin-bottom:12px}
+.fold summary .d2{display:block; font-family:var(--fd); font-weight:300;
+  font-size:clamp(23px,2.8vw,38px); line-height:1.04; letter-spacing:-.03em}
+.fold .pl{flex:none; width:18px; height:18px; position:relative}
+.fold .pl::before,.fold .pl::after{content:''; position:absolute; inset:50% 0 auto;
+  height:1px; background:currentColor; transition:transform .55s var(--e1)}
+.fold .pl::after{transform:rotate(90deg)}
+.fold[open] .pl::after{transform:rotate(0)}
+.fold .body{padding:4px 0 clamp(28px,3.4vw,44px)}
+.fold .body .grid{row-gap:clamp(18px,2.4vw,30px)}
+.fold .body .hd{grid-column:1/span 5}
+.fold .body .cols{grid-column:7/span 6; display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,32px)}
+.fold .half{border-top:1px solid var(--line-2); padding-top:20px}
+.fold .half b{display:block; font-family:var(--fd); font-weight:300; font-size:19px; letter-spacing:-.02em; margin-bottom:6px}
+.fold .half .sub{margin:0 0 16px; font-size:13.5px; color:var(--muted)}
+.fold .half ul{list-style:none; margin:0; padding:0}
+.fold .half li{position:relative; padding:0 0 10px 22px; font-size:15.5px; color:var(--ink-2)}
+.fold .half li::before{content:''; position:absolute; left:0; top:11px; width:10px; height:1px; background:var(--accent)}
+.fold .foot{grid-column:7/span 6}
+.steps-ol{list-style:none; margin:0; padding:0; counter-reset:s;
+  display:grid; grid-template-columns:repeat(5,1fr); gap:clamp(16px,2vw,28px)}
+.steps-ol li{counter-increment:s; border-top:1px solid var(--line-2); padding-top:18px;
+  font-size:15px; line-height:1.55; color:var(--ink-2)}
+.steps-ol li::before{content:counter(s,decimal-leading-zero); display:block; margin-bottom:12px;
+  font-family:var(--fd); font-weight:300; font-size:12px; letter-spacing:.06em; color:var(--accent)}
 
 /* второй рисунок: сейчас и хочу */
 .cmp{background:var(--sand); padding:clamp(52px,6.4vw,96px) 0}
@@ -499,32 +521,26 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 .cmp .list{grid-column:1/span 12; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,28px)}
 
 @media (max-width:1080px){
-  .draw .hd{grid-column:1/span 12}
-  .draw .cols,.draw .foot{grid-column:1/span 12; margin-top:34px}
+  .fold .body .hd{grid-column:1/span 12}
+  .fold .body .cols,.fold .foot{grid-column:1/span 12}
+  .steps-ol{grid-template-columns:repeat(2,1fr)}
   .cmp .hd{grid-column:1/span 12}
   .cmp .list{grid-template-columns:repeat(2,1fr)}
 }
 @media (max-width:640px){
-  .draw .cols{grid-template-columns:1fr}
+  .fold .body .cols{grid-template-columns:1fr}
+  .steps-ol{grid-template-columns:1fr; gap:0}
+  .steps-ol li{padding-bottom:16px}
+  .steps-ol li::before{margin-bottom:8px}
   .cmp .list{grid-template-columns:1fr}
 }
 
-.sad-hero{padding:clamp(118px,13vw,180px) 0 clamp(34px,4vw,54px)}
-.sad-hero{padding-bottom:clamp(30px,3.6vw,52px)}
+.sad-hero{padding:clamp(100px,11vw,150px) 0 clamp(20px,2.4vw,40px)}
 .sad-hero .t{grid-column:1/span 9}
-.sad-hero h1{margin:22px 0 0; font-size:clamp(38px,6.4vw,92px)}
-.sad-hero .lead{margin-top:26px; max-width:52ch}
+.sad-hero h1{margin:18px 0 0; font-size:clamp(34px,5.6vw,78px)}
+.sad-hero .lead{margin-top:20px; max-width:50ch}
 
 /* отдельная полоса с порядком чтения рисунка */
-.how{background:var(--sand); padding:clamp(40px,5vw,72px) 0}
-.how .hd{grid-column:1/span 12; margin-bottom:clamp(26px,3vw,40px)}
-.how ol{grid-column:1/span 12; display:grid; grid-template-columns:repeat(5,1fr);
-  gap:clamp(16px,2vw,28px); list-style:none; margin:0; padding:0; counter-reset:s}
-.how li{counter-increment:s; border-top:1px solid var(--line-2); padding-top:18px;
-  font-size:15px; line-height:1.55; color:var(--ink-2)}
-.how li::before{content:counter(s,decimal-leading-zero); display:block; margin-bottom:12px;
-  font-family:var(--fd); font-weight:300; font-size:12px; letter-spacing:.06em; color:var(--accent)}
-
 /* поиск и фильтры */
 .find{position:sticky; top:82px; scroll-margin-top:82px; z-index:40; padding:0; background:color-mix(in srgb, var(--cream) 90%, transparent); backdrop-filter:blur(16px); border-block:1px solid var(--line)}
 .find .wrap{padding-block:clamp(14px,1.8vw,22px)}
@@ -687,58 +703,55 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
     <div class="t">
       <p class="lbl">Арт-воркшоп · Вероника Прачук</p>
       <h1 class="d1 sp" data-split>Сад желаний</h1>
-      <p class="lead">Когда растение пересаживают, оно сначала роняет листья: все силы уходят в корни. С желанием происходит то же самое, когда в жизни многое меняется. Найдите в поиске то, что есть на вашем рисунке: цвет, дерево, плод, цветок, животное, погоду, себя. Прочитайте значение и вопрос, который стоит себе задать.</p>
+      <p class="lead">Когда растение пересаживают, оно сначала роняет листья: все силы уходят в корни. С желанием происходит то же самое, когда в жизни многое меняется.</p>
     </div>
   </div>
 </section>
 
-<section class="draw">
-  <div class="wrap grid">
-    <div class="hd">
-      <p class="lbl">Шаг первый</p>
-      <h2 class="d2">Что нарисовать</h2>
-      <p class="lead">Рисовать красиво не нужно, нужно рисовать честно. Подойдут любые карандаши и обычный лист. Это занимает около десяти минут.</p>
-    </div>
-    <div class="cols">
-      <div class="half">
-        <b>Левая половина</b>
-        <p class="sub">Сад, какой он сейчас</p>
-        <ul>
-          <li>Дерево</li>
-          <li>Плод</li>
-          <li>Цветы</li>
-          <li>Живое существо</li>
-          <li>Погода</li>
-          <li>Вы сами</li>
-        </ul>
-      </div>
-      <div class="half">
-        <b>Правая половина</b>
-        <p class="sub">Сад, каким вы хотите его видеть</p>
-        <ul>
-          <li>Дерево</li>
-          <li>Плод</li>
-          <li>Цветы</li>
-          <li>Живое существо</li>
-          <li>Погода</li>
-          <li>Вы сами</li>
-        </ul>
-      </div>
-    </div>
-    <p class="note foot">Добавляйте что угодно сверх списка: забор, дорожку, воду, дом, других людей, солнце. Именно такие детали, нарисованные без инструкции, обычно говорят больше всего.</p>
-  </div>
-</section>
+<section class="folds">
+  <div class="wrap">
 
-<section class="how">
-  <div class="wrap grid">
-    <div class="hd"><p class="lbl">Шаг второй · Как читать свой рисунок</p></div>
-    <ol>
-      <li>Начните с левой половины, с той, где сад сейчас. Правую пока не трогайте.</li>
-      <li>Посмотрите на неё целиком. Какого цвета больше всего? Найдите этот цвет в разборе ниже.</li>
-      <li>Разберите по очереди: дерево, плод, цветы, живое существо, погоду и себя.</li>
-      <li>Отметьте детали, которые вы нарисовали сами, без инструкции. Они обычно самые важные.</li>
-      <li>И только потом переходите к правой половине и к последнему разделу страницы.</li>
-    </ol>
+    <details class="fold">
+      <summary>
+        <span class="t"><span class="lbl">Шаг первый</span><span class="d2">Что нарисовать</span></span>
+        <span class="pl" aria-hidden="true"></span>
+      </summary>
+      <div class="body">
+        <div class="grid">
+          <p class="lead hd">Найдите в поиске ниже то, что есть на вашем рисунке: цвет, дерево, плод, цветок, животное, погоду, себя. Прочитайте значение и вопрос, который стоит себе задать. Рисовать красиво не нужно, нужно рисовать честно. Подойдут любые карандаши и обычный лист. Это занимает около десяти минут.</p>
+          <div class="cols">
+            <div class="half">
+              <b>Левая половина</b>
+              <p class="sub">Сад, какой он сейчас</p>
+              <ul><li>Дерево</li><li>Плод</li><li>Цветы</li><li>Живое существо</li><li>Погода</li><li>Вы сами</li></ul>
+            </div>
+            <div class="half">
+              <b>Правая половина</b>
+              <p class="sub">Сад, каким вы хотите его видеть</p>
+              <ul><li>Дерево</li><li>Плод</li><li>Цветы</li><li>Живое существо</li><li>Погода</li><li>Вы сами</li></ul>
+            </div>
+          </div>
+          <p class="note foot">Добавляйте что угодно сверх списка: забор, дорожку, воду, дом, других людей, солнце. Именно такие детали, нарисованные без инструкции, обычно говорят больше всего.</p>
+        </div>
+      </div>
+    </details>
+
+    <details class="fold">
+      <summary>
+        <span class="t"><span class="lbl">Шаг второй</span><span class="d2">Как читать рисунок</span></span>
+        <span class="pl" aria-hidden="true"></span>
+      </summary>
+      <div class="body">
+        <ol class="steps-ol">
+          <li>Начните с левой половины, с той, где сад сейчас. Правую пока не трогайте.</li>
+          <li>Посмотрите на неё целиком. Какого цвета больше всего? Найдите этот цвет в разборе ниже.</li>
+          <li>Разберите по очереди: дерево, плод, цветы, живое существо, погоду и себя.</li>
+          <li>Отметьте детали, которые вы нарисовали сами, без инструкции. Они обычно самые важные.</li>
+          <li>И только потом переходите к правой половине и к последнему разделу страницы.</li>
+        </ol>
+      </div>
+    </details>
+
   </div>
 </section>
 
@@ -834,12 +847,31 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   } else nav.classList.add('solid');
 
   var burger = $('#burger'), sheet = $('#sheet');
+  /* Скрытие прокрутки через overflow на мобильных браузерах не работает:
+     страница продолжает ехать, а накладка подвисает. Поэтому фиксируем
+     само тело страницы и возвращаем прокрутку на место при закрытии. */
+  var lockY = 0;
   function menu(open){
-    document.body.classList.toggle('open', open);
+    var b = document.body;
+    if (open){
+      lockY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      b.style.position = 'fixed';
+      b.style.top = (-lockY) + 'px';
+      b.style.left = '0';
+      b.style.right = '0';
+      b.style.width = '100%';
+    } else {
+      b.style.position = '';
+      b.style.top = '';
+      b.style.left = '';
+      b.style.right = '';
+      b.style.width = '';
+      window.scrollTo(0, lockY);
+    }
+    b.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     sheet.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
   }
   burger.addEventListener('click', function(){ menu(!document.body.classList.contains('open')); });
   each($$('a', sheet), function(a){ a.addEventListener('click', function(){ menu(false); }); });
@@ -1113,7 +1145,7 @@ function scrollToList(){
   const list = document.getElementById('list');
   const top = list.getBoundingClientRect().top + window.scrollY;
   const sticky = 82 + find.getBoundingClientRect().height;
-  window.scrollTo({top: Math.max(0, top - sticky), behavior: 'smooth'});
+  window.scrollTo(0, Math.max(0, top - sticky));
 }
 $chips.addEventListener('click', function(e){
   const b = e.target.closest('.chip');

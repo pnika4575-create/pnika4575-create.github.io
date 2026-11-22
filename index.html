@@ -850,12 +850,31 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 
   /* ---------- мобильное меню ---------- */
   var burger = $('#burger'), sheet = $('#sheet');
+  /* Скрытие прокрутки через overflow на мобильных браузерах не работает:
+     страница продолжает ехать, а накладка подвисает. Поэтому фиксируем
+     само тело страницы и возвращаем прокрутку на место при закрытии. */
+  var lockY = 0;
   function menu(open){
-    document.body.classList.toggle('open', open);
+    var b = document.body;
+    if (open){
+      lockY = window.pageYOffset || document.documentElement.scrollTop || 0;
+      b.style.position = 'fixed';
+      b.style.top = (-lockY) + 'px';
+      b.style.left = '0';
+      b.style.right = '0';
+      b.style.width = '100%';
+    } else {
+      b.style.position = '';
+      b.style.top = '';
+      b.style.left = '';
+      b.style.right = '';
+      b.style.width = '';
+      window.scrollTo(0, lockY);
+    }
+    b.classList.toggle('open', open);
     burger.setAttribute('aria-expanded', open);
     burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
     sheet.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
   }
   burger.addEventListener('click', function(){ menu(!document.body.classList.contains('open')); });
   each($$('a', sheet), function(a){ a.addEventListener('click', function(){ menu(false); }); });
