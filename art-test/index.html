@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Пересаженный сад: расшифровка рисунка | Вероника Прачук</title>
-<meta name="description" content="Расшифровка арт-упражнения «Пересаженный сад»: что значат цвет, дерево, плод, цветы, животные, погода и ваше место на рисунке. Вероника Прачук, психолог и сексолог, Белград.">
+<title>Сад желаний: расшифровка рисунка | Вероника Прачук</title>
+<meta name="description" content="Расшифровка арт-упражнения «Сад желаний»: что значат цвет, дерево, плод, цветы, животные, погода и ваше место на рисунке. Вероника Прачук, психолог и сексолог, Белград.">
 <meta name="theme-color" content="#F4F0E9">
 <meta name="color-scheme" content="light">
 <link rel="icon" href="/favicon.svg" type="image/svg+xml">
@@ -14,7 +14,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Вероника Прачук">
 <meta property="og:locale" content="ru_RU">
-<meta property="og:title" content="Пересаженный сад: расшифровка рисунка">
+<meta property="og:title" content="Сад желаний: расшифровка рисунка">
 <meta property="og:description" content="Что значат цвет, дерево, плод, цветы, животные, погода и ваше место на рисунке. Арт-упражнение Вероники Прачук.">
 <meta property="og:image" content="https://pro-otnosheniya.com/og.jpg">
 <meta property="og:image:width" content="1200">
@@ -475,7 +475,40 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
 }
 
 
-/* ======================= арт-тест «Пересаженный сад» ======================= */
+/* ======================= арт-тест «Сад желаний» ======================= */
+/* что рисовать */
+.draw{background:var(--paper); border-block:1px solid var(--line); padding:clamp(44px,5.4vw,78px) 0}
+.draw .hd{grid-column:1/span 5}
+.draw .hd .d2{margin:20px 0 0; font-size:clamp(26px,3.2vw,44px)}
+.draw .hd .lead{margin-top:20px}
+.draw .cols{grid-column:7/span 6; display:grid; grid-template-columns:1fr 1fr; gap:clamp(18px,2.4vw,32px)}
+.draw .half{border-top:1px solid var(--line-2); padding-top:20px}
+.draw .half b{display:block; font-family:var(--fd); font-weight:300; font-size:19px; letter-spacing:-.02em; margin-bottom:6px}
+.draw .half .sub{margin:0 0 16px; font-size:13.5px; color:var(--muted)}
+.draw .half ul{list-style:none; margin:0; padding:0}
+.draw .half li{position:relative; padding:0 0 10px 22px; font-size:15.5px; color:var(--ink-2)}
+.draw .half li::before{content:''; position:absolute; left:0; top:11px; width:10px; height:1px; background:var(--accent)}
+.draw .foot{grid-column:7/span 6; margin-top:clamp(22px,2.6vw,34px); padding-top:20px; border-top:1px solid var(--line)}
+
+/* второй рисунок: сейчас и хочу */
+.cmp{background:var(--sand); padding:clamp(52px,6.4vw,96px) 0}
+.cmp .hd{grid-column:1/span 7; margin-bottom:clamp(30px,3.6vw,52px)}
+.cmp .hd .step-n{font-family:var(--fd); font-weight:200; font-size:13px; letter-spacing:.08em; color:var(--accent)}
+.cmp .hd .d2{margin:16px 0 0; font-size:clamp(26px,3.4vw,46px)}
+.cmp .hd .lead{margin-top:20px; max-width:52ch}
+.cmp .list{grid-column:1/span 12; display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(16px,2vw,28px)}
+
+@media (max-width:1080px){
+  .draw .hd{grid-column:1/span 12}
+  .draw .cols,.draw .foot{grid-column:1/span 12; margin-top:34px}
+  .cmp .hd{grid-column:1/span 12}
+  .cmp .list{grid-template-columns:repeat(2,1fr)}
+}
+@media (max-width:640px){
+  .draw .cols{grid-template-columns:1fr}
+  .cmp .list{grid-template-columns:1fr}
+}
+
 .sad-hero{padding:clamp(118px,13vw,180px) 0 clamp(34px,4vw,54px)}
 .sad-hero{padding-bottom:clamp(30px,3.6vw,52px)}
 .sad-hero .t{grid-column:1/span 9}
@@ -493,7 +526,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   font-family:var(--fd); font-weight:300; font-size:12px; letter-spacing:.06em; color:var(--accent)}
 
 /* поиск и фильтры */
-.find{position:sticky; top:82px; z-index:40; padding:0; background:color-mix(in srgb, var(--cream) 90%, transparent); backdrop-filter:blur(16px); border-block:1px solid var(--line)}
+.find{position:sticky; top:82px; scroll-margin-top:82px; z-index:40; padding:0; background:color-mix(in srgb, var(--cream) 90%, transparent); backdrop-filter:blur(16px); border-block:1px solid var(--line)}
 .find .wrap{padding-block:clamp(14px,1.8vw,22px)}
 .srch{position:relative; display:flex; align-items:center; gap:14px}
 .srch svg{flex:none; width:19px; height:19px; fill:none; stroke:var(--muted); stroke-width:1.6}
@@ -653,25 +686,63 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   <div class="wrap grid">
     <div class="t">
       <p class="lbl">Арт-воркшоп · Вероника Прачук</p>
-      <h1 class="d1 sp" data-split>Пересаженный сад</h1>
+      <h1 class="d1 sp" data-split>Сад желаний</h1>
       <p class="lead">Когда растение пересаживают, оно сначала роняет листья: все силы уходят в корни. С желанием происходит то же самое, когда в жизни многое меняется. Найдите в поиске то, что есть на вашем рисунке: цвет, дерево, плод, цветок, животное, погоду, себя. Прочитайте значение и вопрос, который стоит себе задать.</p>
     </div>
   </div>
 </section>
 
+<section class="draw">
+  <div class="wrap grid">
+    <div class="hd">
+      <p class="lbl">Шаг первый</p>
+      <h2 class="d2">Что нарисовать</h2>
+      <p class="lead">Рисовать красиво не нужно, нужно рисовать честно. Подойдут любые карандаши и обычный лист. Это занимает около десяти минут.</p>
+    </div>
+    <div class="cols">
+      <div class="half">
+        <b>Левая половина</b>
+        <p class="sub">Сад, какой он сейчас</p>
+        <ul>
+          <li>Дерево</li>
+          <li>Плод</li>
+          <li>Цветы</li>
+          <li>Живое существо</li>
+          <li>Погода</li>
+          <li>Вы сами</li>
+        </ul>
+      </div>
+      <div class="half">
+        <b>Правая половина</b>
+        <p class="sub">Сад, каким вы хотите его видеть</p>
+        <ul>
+          <li>Дерево</li>
+          <li>Плод</li>
+          <li>Цветы</li>
+          <li>Живое существо</li>
+          <li>Погода</li>
+          <li>Вы сами</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note foot">Добавляйте что угодно сверх списка: забор, дорожку, воду, дом, других людей, солнце. Именно такие детали, нарисованные без инструкции, обычно говорят больше всего.</p>
+  </div>
+</section>
+
 <section class="how">
   <div class="wrap grid">
-    <div class="hd"><p class="lbl">Как читать свой рисунок</p></div>
+    <div class="hd"><p class="lbl">Шаг второй · Как читать свой рисунок</p></div>
     <ol>
-      <li>Посмотрите на рисунок целиком. Какого цвета больше всего? Начните с него.</li>
-      <li>Найдите по очереди: дерево, плод, живое существо, погоду и себя.</li>
+      <li>Начните с левой половины, с той, где сад сейчас. Правую пока не трогайте.</li>
+      <li>Посмотрите на неё целиком. Какого цвета больше всего? Найдите этот цвет в разборе ниже.</li>
+      <li>Разберите по очереди: дерево, плод, цветы, живое существо, погоду и себя.</li>
       <li>Отметьте детали, которые вы нарисовали сами, без инструкции. Они обычно самые важные.</li>
-      <li>Сравните «сейчас» и «хочу». Разница между ними и есть то, что вам хочется изменить.</li>
-      <li>Если значение не откликается, не берите его. Ваше ощущение важнее любой расшифровки.</li>
+      <li>И только потом переходите к правой половине и к последнему разделу страницы.</li>
     </ol>
   </div>
 </section>
 
+<div class="glossary">
 <section class="find" aria-label="Поиск по значениям">
   <div class="wrap">
     <div class="srch">
@@ -687,6 +758,18 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
   <div class="wrap grid">
     <p class="cnt lbl" id="count" role="status"></p>
     <div id="list"></div>
+  </div>
+</section>
+</div>
+
+<section class="cmp">
+  <div class="wrap grid">
+    <div class="hd">
+      <p class="step-n">ШАГ ТРЕТИЙ</p>
+      <h2 class="d2">Сейчас и хочу</h2>
+      <p class="lead">Теперь посмотрите на правую половину рисунка и сравните её с левой. Разница между тем, что есть, и тем, чего хочется, и есть ваш запрос на перемены. Ниже разобраны самые частые варианты этой разницы.</p>
+    </div>
+    <div class="list" id="cmplist"></div>
   </div>
 </section>
 
@@ -719,7 +802,7 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
         <li><a href="/#obo-mne">Обо мне</a></li>
         <li><a href="/#zaprosy">Актуальные запросы</a></li>
         <li><a href="/#test">Тест</a></li>
-        <li><a href="/art-test/">Пересаженный сад</a></li>
+        <li><a href="/art-test/">Сад желаний</a></li>
         <li><a href="/#uslugi">Услуги</a></li>
         <li><a href="/#ceny">Цены</a></li>
         <li><a href="/#statyi">Статьи</a></li>
@@ -729,7 +812,6 @@ footer .legal{grid-column:1/span 12; margin-top:clamp(38px,4.6vw,66px); padding-
       <b>Связаться</b>
       <ul>
         <li><a href="https://t.me/veroniksa_c">Telegram</a></li>
-        <li><a href="tel:+79197860909">+7 919 786 09 09</a></li>
         <li><a href="mailto:pnika4575@gmail.com">pnika4575@gmail.com</a></li>
       </ul>
     </div>
@@ -989,11 +1071,16 @@ function card(it, words, showTag){
       '<p class="ask">' + esc(it.q) + '</p>' +
     '</article>';
 }
+/* «Сейчас и хочу» показывается отдельной секцией ниже, поэтому
+   из фильтров и общего списка он исключён, но поиском находится. */
+const SEPARATE = 'compare';
+
 function render(){
   const raw = norm($q.value.trim());
   const words = raw.split(/[\s,.;]+/).filter(Boolean);
   $clear.hidden = !raw;
   let pool = items.filter(it => active === 'all' || it.cat === active);
+  if (!words.length) pool = pool.filter(it => it.cat !== SEPARATE);
   if (words.length) pool = pool.filter(it => matches(it, words));
 
   if (!pool.length){
@@ -1005,7 +1092,7 @@ function render(){
   if (words.length){
     $list.innerHTML = '<div class="group">' + pool.map(it => card(it, words, true)).join('') + '</div>';
   } else {
-    const cats = active === 'all' ? Object.keys(CATS) : [active];
+    const cats = (active === 'all' ? Object.keys(CATS) : [active]).filter(c => c !== SEPARATE);
     $list.innerHTML = cats.map(function(c){
       const g = pool.filter(it => it.cat === c);
       if (!g.length) return '';
@@ -1016,19 +1103,30 @@ function render(){
   }
 }
 function chips(){
-  const all = [['all','Всё']].concat(Object.keys(CATS).map(k => [k, CATS[k][0]]));
+  const all = [['all','Всё']].concat(Object.keys(CATS).filter(k => k !== SEPARATE).map(k => [k, CATS[k][0]]));
   $chips.innerHTML = all.map(function(p){
     return '<button class="chip" type="button" data-k="' + p[0] + '" aria-pressed="' + (p[0] === active) + '">' + p[1] + '</button>';
   }).join('');
 }
+function scrollToList(){
+  const find = document.querySelector('.find');
+  const list = document.getElementById('list');
+  const top = list.getBoundingClientRect().top + window.scrollY;
+  const sticky = 82 + find.getBoundingClientRect().height;
+  window.scrollTo({top: Math.max(0, top - sticky), behavior: 'smooth'});
+}
 $chips.addEventListener('click', function(e){
   const b = e.target.closest('.chip');
   if (!b) return;
-  active = b.dataset.k; chips(); render();
+  active = b.dataset.k; chips(); render(); scrollToList();
 });
 $q.addEventListener('input', render);
 $clear.addEventListener('click', function(){ $q.value = ''; render(); $q.focus(); });
-chips(); render();
+
+chips();
+render();
+document.getElementById('cmplist').innerHTML =
+  items.filter(it => it.cat === SEPARATE).map(it => card(it, [], false)).join('');
 
 </script>
 </body>
